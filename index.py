@@ -14,9 +14,9 @@ bot = Bot(TOKEN)
 
 
 def welcome(update, context) -> None:
-    update.message.reply_text(f"Hello {update.message.from_user.first_name}, Welcome to SB Movies.\n"
-                              f"🔥 Download Your Favourite Movies For 💯 Free And 🍿 Enjoy it.")
-    update.message.reply_text("👇 Enter Movie Name 👇")
+    update.message.reply_text(f"Hello {update.message.from_user.first_name}, Welcome to YouFlix!\n\n"
+                              f"Search and Download Your Favourite Movies For Free")
+    update.message.reply_text("Enter movie name below...👇🏻")
 
 
 def find_movie(update, context):
@@ -31,7 +31,8 @@ def find_movie(update, context):
         reply_markup = InlineKeyboardMarkup(keyboards)
         search_results.edit_text('Search Results...', reply_markup=reply_markup)
     else:
-        search_results.edit_text('Sorry 🙏, No Result Found!\nCheck If You Have Misspelled The Movie Name.')
+        search_results.edit_text('😔 Sorry, No Result Found!\n\nCheck if you have spell the movie name correctly ')
+
 
 
 def movie_result(update, context) -> None:
